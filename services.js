@@ -37,7 +37,7 @@ app.post('/nacimiento', function (req, res) {
     var nacimiento = '';
  
     if (edad != '')
-        nacimiento = 2015 - edad;
+        nacimiento = 2021 - edad;
  
     res.send('<html><body>'
             + cabecera
