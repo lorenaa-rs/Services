@@ -4,6 +4,7 @@ const port = 3000
 
 
 var body_parser = require('body-parser');
+const clientes = {data : ['15','12','12', '21']}
 
 
 app.use(body_parser.urlencoded({extended:true}));
@@ -47,6 +48,19 @@ app.post('/nacimiento', function (req, res) {
     );
  
 });
+
+app.delete('/nacimiento', function(req, res){
+  var edad = req.body.edad || '';
+  try {
+    const found = array1.find(element => element > edad);
+    if (found != '') {
+      clientes.data.delete(found);
+      console.log("edad borrada")
+    }
+  } catch (error) {
+    console.log(error)
+  }
+})
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
